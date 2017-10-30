@@ -1,0 +1,127 @@
+/*переменные*/
+$header_avatarPhoto: 100px;
+$header_avatarMargin: 20px;
+$header_avatarRadius: $header_avatarPhoto / 2;
+$header_textBg: #fffbc8;
+$border_color: #cecabf;
+$list_padding : 10px;
+$listItem_quantity: 3;
+$listItem_padding: 3px;
+$listItem_margin: 3px;
+
+.c-header {
+	position: relative;
+	width: 100%;
+		&__photo {
+			display: block;
+			width: $header_avatarPhoto;
+			height: $header_avatarPhoto;
+			margin-right: $header_avatarMargin;
+			float: left;
+			z-index: 2;
+			@include border-radius($header_avatarRadius);
+				img {
+					max-width: 100%;
+				}
+		}
+		&__name {
+			text-transform: capitalize;
+			float: left;
+			/* @include clearfix; */
+			
+		}
+		&__description {
+			display: block;
+			color: #808080;
+			margin-bottom: 5px;
+			&:first-letter {
+				text-transform: uppercase;
+			}
+		}
+		&__text {
+			position: relative;
+			width: 100%;
+			padding: 5px;
+			background-color: $header_textBg;
+			z-index:-1;
+			border: 1px solid $border_color;
+			border-left: none;
+			@include border-radius(4px);
+				&:before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: $header_avatarRadius;
+					height: $header_avatarPhoto;
+					background: white;
+				}
+		}
+}
+.c-services {
+	margin-left: $header_avatarPhoto + $header_avatarMargin;
+	ul {
+		list-style: none;
+	}
+	&__title, &__list, &__sum {
+		width: 100%;
+		@include clearfix;
+	}
+	&__sum {
+		font-size: 120%;
+		font-weight: bold;
+		text-transform: capitalize;
+	}
+	&__list {
+		position: relative;
+		border: 1px solid $border_color;
+		border-width: 1px 0;
+		padding: $list_padding 0;
+		&:before {
+			content: "";
+			position: absolute;
+			top: $list_padding;
+			left: 0;
+			height: ($font-size * $line-height + $listItem_padding * 2 + $listItem_margin) * $listItem_quantity - $listItem_margin;
+			width: 2px;
+			background-color: $border_color;
+		}
+		.c-services__item:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			@include border-radius(0 3px 3px 0);
+			opacity: 0.3;
+		}
+		.c-services__item:first-child:before {
+			width: 50%;
+			background-color:green;
+		}
+		.c-services__item:nth-child(3):before {
+			width: 25%;
+			background-color: blue;
+		}
+		.c-services__item:nth-child(5):before {
+			width: 15%;
+			background-color: blue;
+		}
+	}
+	&__item, &__quantity {
+		padding: $listItem_padding 0;
+		margin-bottom: $listItem_margin;
+	}
+	&__item {
+		padding-left: 10px;
+		position: relative;
+		width: 80%;
+		float: left;
+	}
+	&__quantity {
+		float: right;
+		width: 20%;
+		text-align: center;
+	}
+}

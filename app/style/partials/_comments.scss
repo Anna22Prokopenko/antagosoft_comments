@@ -1,0 +1,130 @@
+$commentIcon_size: 15px;
+$commentsItem_padding: 15px;
+$commentsItem_margin: 17px;
+$comment_text_bg: #f2fbff;
+$comment_padding: 15px;
+$comment_text_shape: 15px;
+$comment_text_shape_mask: 1.41 * $comment_text_shape;
+$link_color: #3d77ae;
+$form_bg: #f2f2f2;
+.c-comments {
+	width: 100%;
+	&__list {
+		list-style: none;
+		a {
+			color: $link_color;
+			&:hover {
+				color: $link_color;
+			}
+		}
+	}
+	&__item {
+		display: inline-block;
+		&:first-child {
+			font-size: 120%;
+			font-weight: bold;
+		}
+		&.-left {
+			padding-right: $commentsItem_padding;
+		}
+		&.-right {
+			float: right;
+			padding-left: $commentsItem_padding;
+		}
+		&.-like:before {
+			content: "";
+			display: inline-block;
+			padding-right: 3px;
+			vertical-align: middle;
+			background: url(../img/comment_icon_like.png) no-repeat;
+			width: $commentIcon_size;
+			height: $commentIcon_size;
+		}
+		&.-guantity:before {
+			content: "";
+			display: inline-block;
+			padding-right: 3px;
+			vertical-align: middle;
+			background: url(../img/comment_icon.png) no-repeat;
+			width: $commentIcon_size;
+			height: $commentIcon_size;
+		}
+	}
+}
+.c-commentsBody {
+	width: 100%;
+	&__item {
+		width: 100%;
+		margin-bottom: $commentsItem_margin;
+	}
+	&__title {
+		list-style: none;
+		margin-bottom: $commentsItem_margin;
+	}
+	&__name, &__date {
+		display: inline-block;
+		padding-right: $commentsItem_padding;
+	}
+	&__name {
+		font-weight: bold;
+	}
+	&__date {
+		color: gray;
+	}
+	&__text {
+		position: relative;
+		background-color: $comment_text_bg;
+		border: 1px solid $border_color;
+		@include border-radius (3px);
+		padding: $comment_padding;
+		&:before {
+			content: "";
+			position: absolute;
+			top: -$comment_text_shape;
+			left: $comment_text_shape;
+			width: $comment_text_shape;
+			height: $comment_text_shape;
+			background-color: $comment_text_bg;
+			border-left: 1px solid $border_color;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: -$comment_text_shape_mask;
+			left: $comment_text_shape * 2;
+			width: $comment_text_shape_mask / 2;
+			height: $comment_text_shape_mask;
+			background-color: white;
+			border-left: 1px solid $border_color;
+			transform: rotate(-45deg);
+			transform-origin: left 100%;
+		}
+		p {
+			margin: 0;
+		}
+	}
+}
+.l-form {
+	padding: 30px $paddding_cnt;
+	width: 100%;
+	background-color: $form_bg;
+	.c-form {
+		&__text {
+			width: 100%;
+			height: 100px;
+			border: 1px solid $border_color;
+			@include border-radius (3px);
+			resize: none;
+			margin-bottom: 30px;
+		}
+		&__send {
+			display: block;
+			height: 50px;
+			width: 40%;
+			margin: 0 auto;
+			background-color: #fdd639;
+			@include border-radius (25px);
+			font-weight: bold;
+		}
+	}
+}
