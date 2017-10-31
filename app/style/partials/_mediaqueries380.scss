@@ -1,0 +1,104 @@
+$userinfo_avatar_size: 80px;
+$userinfo_avatar_radius: $userinfo_avatar_size / 2;
+$userinfo_text_padding: 5px 0 5px 16.6666666667%;
+$userinfo_name_fontsize: 1em;
+$userinfo_job_fontsize: 0.7em;
+$userinfo_text_fontsize: 0.8em;
+/*services*/
+$services_title_fontsize: 0.9em;
+$services_list_fontsize: 0.8em;
+$services_margin: 2px;
+/*commentsControl*/
+$control_fontsize: 0.7em;
+/*comments*/
+$comment_name_fontsize: 0.8em;
+$comment_date_fontsize: 0.7em;
+$comment_text_fontsize: 0.7em;
+$form_send_fontsize: 0.7em;
+$form_send_height: 35px;
+$form_send_width: 60%;
+$form_name_fontsize: 0.8em;
+$form_name_width: 30%;
+$form_name_margin: 5%;
+
+
+
+
+@media screen and (max-width: 480px) and (min-width: 320px)  {
+	.c-wrap .c-userinfo {
+		.c-userinfo__name {
+			font-size: $userinfo_name_fontsize;
+			width: 100%;
+		}
+		.c-userinfo__job {
+			font-size: $userinfo_job_fontsize;
+			width: 100%;
+		}
+		.c-userinfo__text {
+			font-size: $userinfo_text_fontsize;
+			padding: $userinfo_text_padding;
+			.c-userinfo__img {
+				left: -$userinfo_avatar_size / 2;
+				width: $userinfo_avatar_size;
+				height: $userinfo_avatar_size;
+				border-radius: $userinfo_avatar_radius;
+			}
+		}
+		.c-services {
+			width: 100%;
+			.c-services__title {
+				font-size: $services_title_fontsize;
+				
+			}
+			.c-services__list {
+				font-size: $services_list_fontsize;
+				border-left: 1px solid #b2b2b2;
+			}
+			.c-servicesOverall {
+				font-size: $services_title_fontsize;
+			}
+		}
+	}
+	.c-commentsWrap {
+		.c-commentsControl {
+			font-size: $control_fontsize;
+			.c-commentsControl__last {
+				width: 35%;
+			}
+			.c-commentsControl__all {
+				width: 35%;
+			}
+			.c-commentsControl__counters {
+				width: 30%;
+			}
+		}
+		.c-commentsCnt {
+			.c-comments {
+				.c-comments__item {
+					.c-comments__name {
+						font-size: $comment_name_fontsize;
+					}
+					.c-comments__date {
+						font-size: $comment_date_fontsize;
+					}
+					.c-comments__text {
+						font-size: $comment_text_fontsize;
+					}
+				}
+			}
+		}
+		.c-commentsForm {
+			.c-commentsForm__name {
+				font-size: $form_name_fontsize;
+				width: $form_name_width;
+				margin-right: $form_name_margin;
+			}
+			.c-commentsForm__send {
+				font-size: $form_send_fontsize;
+				height: $form_send_height;
+				width: $form_send_width;
+			}
+		}
+	}
+	
+}

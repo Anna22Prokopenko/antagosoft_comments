@@ -1,82 +1,171 @@
-$commentIcon_size: 15px;
-$commentsItem_padding: 15px;
-$commentsItem_margin: 17px;
+$border_color: #cecabf;
+/*commentsControl*/
+$control_fontsize: 1em;
+$control_active_fontsize: 1.1em;
+$control_color: #005da1;
+$control_color_active: #333333;
+$control_color_hover: gray;
+$control_icon_margin: -4px;
+$control_icon_size: 17px;
+$control_icon_fontsize: 0.9em;
+/*comments*/
+$comments_cnt_height: 350px;
+$comment_item_margin: 17px;
+$comment_name_fontsize: 1em;
+$comment_name_margin: 10px;
+$comment_name_margin_bottom: 10px;
+$comment_date_fontsize: 0.9em;
+$comment_date_color: gray;
 $comment_text_bg: #f2fbff;
-$comment_padding: 15px;
+$comment_text_padding: 20px;
+$comment_text_margin: 10px;
 $comment_text_shape: 15px;
 $comment_text_shape_mask: 1.41 * $comment_text_shape;
-$link_color: #3d77ae;
+/*commentsForm*/
+$form_margin: 20px;
+$form_padding: 3% 2%;
 $form_bg: #f2f2f2;
-.c-comments {
-	width: 100%;
-	&__list {
-		list-style: none;
-		a {
-			color: $link_color;
+$form_text_height: 70px;
+$form_name_width: 20%;
+$form_name_margin: 5%;
+$form_name_fontsize: 16px;
+$form_name_bg: #f2f2f2;
+$form_name_color: #000;
+$form_send_width: 50%;
+$form_send_height: 50px;
+$form_send_margin: 15px 0 20px 0;
+$form_send_fontsize: 0.9em;
+$form_send_bg: #fdd639;
+$form_send_hoverBg: #ace2f8;
+
+.c-commentsControl {
+	margin-bottom: 20px;
+	&__last {
+		white-space: nowrap;	
+		&:hover {
+			cursor: pointer;
+		}
+		&--notactive {
+			font-size: $control_fontsize;
+			font-weight: normal;
+			text-decoration: underline;
+			color: $control_color;
+			outline: none;
 			&:hover {
-				color: $link_color;
+				color: $control_color_hover;
+				text-decoration: none;
+				outline: none;
+			}
+		}
+		&--active:focus {
+			font-size: $control_fontsize;
+			font-weight: bold;
+			text-decoration: none;
+			color: $control_color_active;
+			outline: none;
+			&:hover {
+				color: $control_color_hover;
+				text-decoration: none;
+				outline: none;
 			}
 		}
 	}
-	&__item {
-		display: inline-block;
-		&:first-child {
-			font-size: 120%;
+	&__all {
+		padding-left: 10%;
+		&:hover {
+			cursor: pointer;
+		}
+		&--active, &--active:focus {
+			font-size: $control_fontsize;
 			font-weight: bold;
+			text-decoration: none;
+			color: $control_color_active;
+			outline: none;
+			&:hover {
+				color: $control_color_hover;
+				text-decoration: none;
+				outline: none;
+			}
 		}
-		&.-left {
-			padding-right: $commentsItem_padding;
+		&--notactive {
+			font-size: $control_fontsize;
+			font-weight: normal;
+			text-decoration: underline;
+			color: $control_color;
+			outline: none;
+			&:hover {
+				color: $control_color_hover;
+				text-decoration: none;
+				outline: none;
+			}
 		}
-		&.-right {
-			float: right;
-			padding-left: $commentsItem_padding;
-		}
-		&.-like:before {
-			content: "";
+	}
+	&__counters {
+		text-align: right;
+		.__like_btn {
+			cursor: pointer;
 			display: inline-block;
-			padding-right: 3px;
+			margin-right: $control_icon_margin;
 			vertical-align: middle;
 			background: url(../img/comment_icon_like.png) no-repeat;
-			width: $commentIcon_size;
-			height: $commentIcon_size;
+			width: $control_icon_size;
+			height: $control_icon_size;
 		}
-		&.-guantity:before {
-			content: "";
+		.__like {
+			font-size: $control_icon_fontsize;
+		}
+		.__quantity_icon {
+			cursor: pointer;
 			display: inline-block;
-			padding-right: 3px;
+			margin-right: $control_icon_margin;
+			margin-left: 20px;
 			vertical-align: middle;
 			background: url(../img/comment_icon.png) no-repeat;
-			width: $commentIcon_size;
-			height: $commentIcon_size;
+			width: $control_icon_size;
+			height: $control_icon_size;
+		}
+		.__quantity {
+			font-size: $control_icon_fontsize;
 		}
 	}
 }
-.c-commentsBody {
-	width: 100%;
+.c-commentsCnt {
+	max-height: $comments_cnt_height;
+    overflow-y: scroll;
+	&::-webkit-scrollbar { 
+		display: none; 
+	}
+    /* width: 96%; */
+    /* margin: 20px 2% 0 2%; */
+}
+.c-comments {
 	&__item {
-		width: 100%;
-		margin-bottom: $commentsItem_margin;
-	}
-	&__title {
-		list-style: none;
-		margin-bottom: $commentsItem_margin;
-	}
-	&__name, &__date {
-		display: inline-block;
-		padding-right: $commentsItem_padding;
+		margin-bottom: $comment_item_margin;
+		padding: 0 15px;
 	}
 	&__name {
+		display: inline-block;
+		font-size: $comment_name_fontsize;
 		font-weight: bold;
+		margin-right: $comment_name_margin;
+		margin-bottom: $comment_name_margin_bottom;
+		text-transform: capitalize;
 	}
 	&__date {
-		color: gray;
+		display: inline-block;
+		font-size: $comment_date_fontsize;
+		color: $comment_date_color;
+		margin-bottom: $comment_name_margin_bottom;
 	}
 	&__text {
 		position: relative;
-		background-color: $comment_text_bg;
+		background: $comment_text_bg;
+		padding: $comment_text_padding;
 		border: 1px solid $border_color;
 		@include border-radius (3px);
-		padding: $comment_padding;
+		margin-top: $comment_text_margin;
+		word-wrap:break-word;
+		font-size: 0.9em;
 		&:before {
 			content: "";
 			position: absolute;
@@ -99,32 +188,63 @@ $form_bg: #f2f2f2;
 			transform: rotate(-45deg);
 			transform-origin: left 100%;
 		}
-		p {
-			margin: 0;
+	}
+}
+.c-commentsForm {
+	margin-top: $form_margin;
+    padding: $form_padding;
+    background: $form_bg;
+    &__text {
+        width: 100%;
+        height: $form_text_height;
+        resize: none;
+    }
+	&__name {
+		display: inline-block;
+		width: $form_name_width;
+		margin-right: $form_name_margin;
+		margin-left: 0;
+		border: 0;
+		border-bottom: 2px solid $border_color;
+		font-size: $form_name_fontsize;
+		background: $form_name_bg;
+		outline: 0;
+		color: $form_name_color;
+		font-weight: bold;
+		animation: animationFrames linear 3s;
+		animation-iteration-count: infinite;
+		transform-origin: 50% 50%;
+	}
+	&__send {
+		width: $form_send_width;
+		margin: $form_send_margin;
+		cursor: pointer;
+		display: inline-block;
+		height: $form_send_height;
+		background: $form_send_bg;
+		@include border-radius (50px);
+		border: 0;
+		font-size: $form_send_fontsize;
+		font-weight: bold;
+		&:hover {
+			background: $form_send_hoverBg;
+		}
+		&:active {
+			outline: 0;
+		}
+		&:focus {
+			outline: 0;
 		}
 	}
 }
-.l-form {
-	padding: 30px $paddding_cnt;
-	width: 100%;
-	background-color: $form_bg;
-	.c-form {
-		&__text {
-			width: 100%;
-			height: 100px;
-			border: 1px solid $border_color;
-			@include border-radius (3px);
-			resize: none;
-			margin-bottom: 30px;
-		}
-		&__send {
-			display: block;
-			height: 50px;
-			width: 40%;
-			margin: 0 auto;
-			background-color: #fdd639;
-			@include border-radius (25px);
-			font-weight: bold;
-		}
-	}
+@keyframes animationFrames{
+      0% {
+        opacity: 0.2;
+      }
+      50% {
+       opacity: 1;
+      }
+    100% {
+        opacity: 0.2;
+    }  
 }

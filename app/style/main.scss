@@ -1,8 +1,10 @@
 @import "../../libs/normalize.css/normalize.css";
 @import "../../libs/bootstrap/dist/css/bootstrap.min.css";
 @import "../../libs/font-awesome/scss/font-awesome.scss";
+@import 'partials/grid';
 @import 'partials/mixins';
 @import 'partials/mediaqueries';
+@import 'partials/mediaqueries380';
 @import 'partials/style';
 @import 'partials/header';
 @import 'partials/comments';

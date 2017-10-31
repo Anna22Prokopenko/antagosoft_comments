@@ -1,127 +1,85 @@
-/*переменные*/
-$header_avatarPhoto: 100px;
-$header_avatarMargin: 20px;
-$header_avatarRadius: $header_avatarPhoto / 2;
-$header_textBg: #fffbc8;
 $border_color: #cecabf;
-$list_padding : 10px;
-$listItem_quantity: 3;
-$listItem_padding: 3px;
-$listItem_margin: 3px;
+/*userinfo*/
+$userinfo_name_fontsize: 1.3em;
+$userinfo_job_color: #808080;
+$userinfo_job_fontsize: 1em;
+$userinfo_text_bg: #fffbc8;
+$userinfo_text_padding: 16px 0 16px 16.6666666667%;
+$userinfo_text_margin: 5px 0 20px;
+$userinfo_avatar_size: 170px;
+$userinfo_avatar_radius: $userinfo_avatar_size / 2;
+$userinfo_avatar_right: 95%;
+/*services*/
+$services_title_padding: 0 2% 4px 0;
+$services_title_margin: 20px;
+$services_item_padding: 4px 6px;
+$services_margin: 2px;
+/*servicesOverall*/
+$servicesOverall_margin: 20px 0;
+$servicesOverall_padding: 20px 0 0;
+$servicesOverall_fontsize: 1.3em;
 
-.c-header {
-	position: relative;
-	width: 100%;
-		&__photo {
-			display: block;
-			width: $header_avatarPhoto;
-			height: $header_avatarPhoto;
-			margin-right: $header_avatarMargin;
-			float: left;
-			z-index: 2;
-			@include border-radius($header_avatarRadius);
-				img {
-					max-width: 100%;
-				}
-		}
-		&__name {
-			text-transform: capitalize;
-			float: left;
-			/* @include clearfix; */
-			
-		}
-		&__description {
-			display: block;
-			color: #808080;
-			margin-bottom: 5px;
-			&:first-letter {
-				text-transform: uppercase;
-			}
-		}
-		&__text {
-			position: relative;
-			width: 100%;
-			padding: 5px;
-			background-color: $header_textBg;
-			z-index:-1;
-			border: 1px solid $border_color;
-			border-left: none;
-			@include border-radius(4px);
-				&:before {
-					content: "";
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: $header_avatarRadius;
-					height: $header_avatarPhoto;
-					background: white;
-				}
-		}
-}
-.c-services {
-	margin-left: $header_avatarPhoto + $header_avatarMargin;
-	ul {
-		list-style: none;
-	}
-	&__title, &__list, &__sum {
-		width: 100%;
-		@include clearfix;
-	}
-	&__sum {
-		font-size: 120%;
+.c-userinfo {
+	&__name {
+		font-size: $userinfo_name_fontsize;
 		font-weight: bold;
 		text-transform: capitalize;
 	}
-	&__list {
+	&__job {
+		color: $userinfo_job_color;
+		font-size: $userinfo_job_fontsize;
+	}
+	&__text {
 		position: relative;
+		background: $userinfo_text_bg;
+		padding: $userinfo_text_padding;
 		border: 1px solid $border_color;
-		border-width: 1px 0;
-		padding: $list_padding 0;
-		&:before {
-			content: "";
-			position: absolute;
-			top: $list_padding;
-			left: 0;
-			height: ($font-size * $line-height + $listItem_padding * 2 + $listItem_margin) * $listItem_quantity - $listItem_margin;
-			width: 2px;
-			background-color: $border_color;
-		}
-		.c-services__item:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			@include border-radius(0 3px 3px 0);
-			opacity: 0.3;
-		}
-		.c-services__item:first-child:before {
-			width: 50%;
-			background-color:green;
-		}
-		.c-services__item:nth-child(3):before {
-			width: 25%;
-			background-color: blue;
-		}
-		.c-services__item:nth-child(5):before {
-			width: 15%;
-			background-color: blue;
+		@include border-radius (4px);
+		margin: $userinfo_text_margin;
+		p {
+			margin: 0;
 		}
 	}
-	&__item, &__quantity {
-		padding: $listItem_padding 0;
-		margin-bottom: $listItem_margin;
-	}
-	&__item {
-		padding-left: 10px;
-		position: relative;
-		width: 80%;
-		float: left;
-	}
-	&__quantity {
-		float: right;
-		width: 20%;
-		text-align: center;
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: -$userinfo_avatar_size / 2;
+		width: $userinfo_avatar_size;
+		height: $userinfo_avatar_size;
+		border-radius: $userinfo_avatar_radius;
 	}
 }
+.c-services {
+	&__title {
+		text-align: right;
+		padding: $services_title_padding;
+		border-bottom: 2px solid $border_color;
+		margin-bottom: $services_title_margin;
+	}
+	&__item {
+		padding: $services_item_padding;
+		margin-bottom: $services_margin;
+		transition: 1.3s all ease-in-out;
+	}
+	&__quantity {
+		text-align: center;
+	}
+	&__list {
+		margin: 0;
+		border-left: 2px solid #b2b2b2;
+		opacity: 0.8;
+	}
+}
+
+.c-servicesOverall {
+	margin: $servicesOverall_margin;
+    border-top: 2px solid $border_color;
+    padding: $servicesOverall_padding;
+    font-size: $servicesOverall_fontsize;
+    font-weight: bold;
+	&__quantity {
+		text-align: right;
+		padding-right: 10px;
+	}
+}
+

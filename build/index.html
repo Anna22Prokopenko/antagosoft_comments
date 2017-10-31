@@ -5,91 +5,92 @@
 		<title>comments</title>
 		<meta name="viewport" content="width=device-width">
 		<meta name="description" content="">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" media="screen,print" href="css/main.css"/>
 		<script defer type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
-		<div class="l-wrap">
-			<section class="l-header">
-				<div class="c-header">
-					<img src="img/avatar.png" alt="" class="c-header__photo">
-					<span class="c-header__name"><strong>вероника ростова</strong></span><br/>
-					<small class="c-header__description">менеджер по продажам</small>
-					<p class="c-header__text">Подберу для вас самые лучшие предложения.<br/>Мои услуги абсолютно бесплатны</p>
-				</div>
-				<div class="c-services">
-					<ul class="c-services__title">
-						<li class="c-services__item"></li>
-						<li class="c-services__quantity">Услуги</li>
-					</ul>
-					<ul class="c-services__list">
-						<li class="c-services__item">Ручное бронирование</li>
-						<li class="c-services__quantity">11</li>
-						<li class="c-services__item">Платные туры</li>
-						<li class="c-services__quantity">3</li>
-						<li class="c-services__item">Отели</li>
-						<li class="c-services__quantity">1</li>
-					</ul>
-					<ul class="c-services__sum">
-						<li class="c-services__item">Всего</li>
-						<li class="c-services__quantity">15</li>
-					</ul>
-				</div>
-			</section>
-			<section class="l-comments">
-				<div class="c-comments">
-					<ul class="c-comments__list">
-						<li class="c-comments__item -left">Последние отзывы</li>
-						<li class="c-comments__item -left"><a href="#" alt=""><strong>Все отзывы</strong></a></li>
-						<li class="c-comments__item -guantity -right">14</li>
-						<li class="c-comments__item -like -right">131</li>
-					</ul>
-				</div>
-				<div class="c-commentsBody">
-					<div class="c-commentsBody__item">
-						<ul class="c-commentsBody__title">
-							<li class="c-commentsBody__name">Ann</li>
-							<li class="c-commentsBody__date"><small>13 ornz,hz 2011</small></li>
-						</ul>
-						<div class="c-commentsBody__text">
-							<p>
-								consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet 
-								dolore magna aliguam erat volutpat. Ut wisis enim ad minim veniam, quis nostrud 
-								exerci tution ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-							</p>
-						</div>
+		<section class="l-comments">
+			<div class="col span_12 c-wrap">
+				<div class="col span_12 c-userinfo">
+					<div class="col span_3"></div>
+					<div class="col span_9 c-userinfo__name">вероника ростова</div>
+					<div class="col span_3"></div>
+					<div class="col span_9 c-userinfo__job">Mенеджер по продажам</div>
+					<div class="col span_1"></div>
+					<div class="col span_11 c-userinfo__text">
+						<img class="c-userinfo__img" src="img/avatar.png" alt="username" title="username">
+						<p>Подберу для вас самые лучшие предложения.<br/> Мои услуги абсолютно бесплатны</p>
 					</div>
-					<div class="c-commentsBody__item">
-						<ul class="c-commentsBody__title">
-							<li class="c-commentsBody__name">Ann</li>
-							<li class="c-commentsBody__date"><small>13 ornz,hz 2011</small></li>
+					<div class="col span_3"></div>
+					<div class="col span_9 c-services">
+						<p class="c-services__title">Услуги</p>
+						<ul class="clearfix c-services__list">
+							<li class="col span_11 c-services__item js-services__item1">Ручное бронирование</li>
+							<li class="col span_1 c-services__quantity js-services__quantity1">11</li>
+							<li class="col span_11 c-services__item js-services__item2">Платные туры</li>
+							<li class="col span_1 c-services__quantity js-services__quantity2">3</li>
+							<li class="col span_11 c-services__item js-services__item3">Отели</li>
+							<li class="col span_1 c-services__quantity js-services__quantity3">1</li>
 						</ul>
-						<div class="c-commentsBody__text">
-							<p>
-								consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet 
-							</p>
-						</div>
-					</div>
-					<div class="c-commentsBody__item">
-						<ul class="c-commentsBody__title">
-							<li class="c-commentsBody__name">Ann</li>
-							<li class="c-commentsBody__date"><small>13 ornz,hz 2011</small></li>
-						</ul>
-						<div class="c-commentsBody__text">
-							<p>
-								consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet 
-							</p>
+						<div class="col span_12 c-servicesOverall">
+							<div class="col span_9 c-servicesOverall__title">Всего</div>
+							<div class="col span_3 c-servicesOverall__quantity js-overall__quantity">15</div>
 						</div>
 					</div>
 				</div>
-			</section>
-			<section class="l-form">
-				<form class="c-form">
-					<textarea class="c-form__text"></textarea>
-					<button class="c-form__send">Написать консультанту</button>
-				</form>
-			</section>
-		</div>
+				<div class="col span_12 c-commentsWrap">
+					<div class="col span_12 c-commentsControl">
+						<div class="col span_3 c-commentsControl__last">
+							<a href="#last" id="lastcomments" class="c-commentsControl__last--notactive">Последние отзывы</a>
+						</div>
+						<div class="col span_5 c-commentsControl__all">
+							<a id="allcomments" class="c-commentsControl__all--active" href="#all" alt="">Все отзывы</a>
+						</div>
+						<div class="col span_4 c-commentsControl__counters">
+							<span class="__like_btn js-commentsControl__like_btn"></span>
+							<span class="__like js-commentsControl__like">16</span>
+							<span class="__quantity_icon"></span>
+							<span class="__quantity js-commentsControl__quantity">5</span>
+						</div>
+					</div>
+					<div class="col span_12 c-commentsCnt">
+						<div class="c-comments js-comments">
+							<div class="col span_12 c-comments__item js-comment__item">
+								<span class="c-comments__name">Ann</span>
+								<span class="c-comments__date">31/10/2017</span>
+								<p class="c-comments__text">
+									consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet 
+									dolore magna aliguam erat volutpat. Ut wisis enim ad minim veniam, quis nostrud 
+									exerci tution ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+								</p>
+							</div>
+							<div class="col span_12 c-comments__item js-comment__item">
+								<span class="c-comments__name">Ann</span>
+								<span class="c-comments__date">31/jrnz,hz/2017</span>
+								<p class="c-comments__text">
+									consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet 
+									dolore magna aliguam erat volutpat. Ut wisis enim ad minim veniam, quis nostrud 
+									exerci tution ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+								</p>
+							</div>
+							<div class="col span_12 c-comments__item js-comment__item">
+								<span class="c-comments__name">Ann</span>
+								<span class="c-comments__date">31/10/2017</span>
+								<p class="c-comments__text">
+									consectetuer adipiscing elit, sed diem nonummy nibh euismod tincidunt ut lacreet 
+									dolore magna aliguam erat volutpat. Ut wisis enim ad minim veniam, quis nostrud 
+									exerci tution ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col span_12 c-commentsForm">
+						<textarea class="c-commentsForm__text js-commentsForm__text"></textarea>
+						<input class="c-commentsForm__name js-commentsForm__name" type="text" maxlength="30" placeholder="Имя...">
+						<button type="submit" class="c-commentsForm__send js-commentsForm__send">Написать консультанту</button>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

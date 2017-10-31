@@ -1,8 +1,9 @@
-$paddding_cnt: 15px;
 $min-width: 360px;
 $max-width: 720px;
-$font-size: 14px;
+$cnt_padding: 3% 5%;
+$font-size: 1.4em;
 $line-height: 1.5;
+$cnt_color: #333;
 
 html, body, .l-wrap {
 	width: 100%;
@@ -20,12 +21,21 @@ body {
     font: inherit;
     vertical-align: baseline;
 }
-.l-wrap {
-	@include font-face("PTSans", "PTSansRegular", "PTSansRegular", "sans-serif");
-	min-width: $min-width;
-	max-width:$max-width;
-	margin: 0 auto;
+.col_fix {
+    margin-bottom: 0.01%;
 }
-.l-header, .l-comments {
-	padding: $paddding_cnt;
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
+.l-comments {
+	max-width: $max-width;
+    min-width: $min-width;
+    margin: 0 auto;
+    padding: $cnt_padding;
+    line-height: $line-height;
+    color: $cnt_color;
+    font-size: $font-size;
+}
+
